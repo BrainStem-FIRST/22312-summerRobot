@@ -17,7 +17,6 @@ public class Tele extends LinearOpMode {
 
         robot = new BrainSTEMRobot(this.hardwareMap, this.telemetry, this, gamepad1);
 
-        double leftStick;
         telemetry.addData("Opmode Status :", "Init");
         telemetry.update();
         waitForStart();

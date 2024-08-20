@@ -17,6 +17,7 @@ public class BrainSTEMRobot {
 
     public DriveTrain driveTrain;
     public Lift lift;
+    public Collector collector;
 
     public BrainSTEMRobot(HardwareMap hwMap, Telemetry telemetry, OpMode opMode, Gamepad gamepad1) {
 
@@ -25,10 +26,12 @@ public class BrainSTEMRobot {
 
         driveTrain = new DriveTrain(hwMap, telemetry, gamepad1);
         lift = new Lift(hwMap, telemetry, gamepad1);
+        collector = new Collector(hwMap, telemetry, gamepad1);
     }
 
     public void update() {
-        lift.update();
         driveTrain.update();
+        lift.update();
+        collector.update();
     }
 }
