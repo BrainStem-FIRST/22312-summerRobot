@@ -38,7 +38,7 @@ public class Lift extends Subsystem {
         liftMotor.setPower(0);
     }
 
-    private void updateLiftState() {
+    private void updateState() {
         switch(liftState) {
             case UP:
                 raiseLift();

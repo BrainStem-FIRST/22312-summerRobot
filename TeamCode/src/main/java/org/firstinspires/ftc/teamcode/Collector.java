@@ -1,3 +1,13 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.Gamepad;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+
+import org.firstinspires.ftc.robotcore.external.Telemetry;
+
+
 public class Collector extends Subsystem {
 
     DcMotorEx collectMotor;
@@ -8,7 +18,7 @@ public class Collector extends Subsystem {
 
     CollectorStates collectorState;
 
-    public Lift(HardwareMap hwMap, Telemetry telemetry, Gamepad gamepad1) {
+    public Collector(HardwareMap hwMap, Telemetry telemetry, Gamepad gamepad1) {
         super(hwMap, telemetry, gamepad1);
 
         collectMotor = (DcMotorEx) hwMap.dcMotor.get("CollectMotor");

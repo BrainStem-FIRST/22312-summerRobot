@@ -17,5 +17,4 @@ public abstract class Subsystem {
         this.telemetry = telemetry;
         this.gamepad1 = gamepad1;
     }
-
 }
