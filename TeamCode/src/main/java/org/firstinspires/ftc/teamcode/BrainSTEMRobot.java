@@ -4,7 +4,6 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
@@ -19,18 +18,17 @@ public class BrainSTEMRobot {
     public Lift lift;
     public Collector collector;
 
-    public BrainSTEMRobot(HardwareMap hwMap, Telemetry telemetry, OpMode opMode, Gamepad gamepad1) {
+    public BrainSTEMRobot(HardwareMap hwMap, Telemetry telemetry, OpMode opMode) {
 
         this.telemetry = telemetry;
         this.opMode = opMode;
 
-        driveTrain = new DriveTrain(hwMap, telemetry, gamepad1);
-        lift = new Lift(hwMap, telemetry, gamepad1);
-        collector = new Collector(hwMap, telemetry, gamepad1);
+        driveTrain = new DriveTrain(hwMap, telemetry);
+        lift = new Lift(hwMap, telemetry);
+        collector = new Collector(hwMap, telemetry);
     }
 
     public void update() {
-        driveTrain.update();
         lift.update();
         collector.update();
     }

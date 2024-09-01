@@ -2,7 +2,6 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
-import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
@@ -20,8 +19,8 @@ public class Lift extends Subsystem {
 
     LiftStates liftState;
 
-    public Lift(HardwareMap hwMap, Telemetry telemetry, Gamepad gamepad1) {
-        super(hwMap, telemetry, gamepad1);
+    public Lift(HardwareMap hwMap, Telemetry telemetry) {
+        super(hwMap, telemetry);
 
         liftMotor = (DcMotorEx) hwMap.dcMotor.get("LiftMotor");
         liftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -52,18 +51,7 @@ public class Lift extends Subsystem {
         }
     }
 
-    private void checkNewState() {
-        if(gamepad1.a) {
-            liftState = LiftStates.UP;
-        } else if(gamepad1.b) {
-            liftState = LiftStates.DOWN;
-        } else {
-            liftState = LiftStates.STATIC;
-        }
-    }
-
     public void update() {
-        checkNewState();
         updateState();
     }
 }
